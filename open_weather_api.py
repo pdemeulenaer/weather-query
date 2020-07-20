@@ -29,7 +29,34 @@ def request_weather(city):
 
     return response
 
-response = request_weather(city_list[0])
+
+def search_weather(city_list):
+    """Search weather data
+
+    Args:
+        city_list (string): [description]
+
+    Returns:
+        [type]: [description]
+    """
+
+    url = "https://community-open-weather-map.p.rapidapi.com/find"
+
+    querystring = {"type":"link%2C accurate","units":"imperial%2C metric","q":"florence"}
+
+    headers = {
+        'x-rapidapi-host': "community-open-weather-map.p.rapidapi.com",
+        'x-rapidapi-key': "84a315f297msh04bc1c02d9bf9afp123b82jsn2ba923f95520"
+        }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)  
+
+    return response
+    
+
+
+#response = request_weather(city_list[-1])
+response = search_weather(city_list[-1])
 print(city_list[0], response.text)
 
 
