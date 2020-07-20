@@ -1,2 +1,2 @@
 # weather-query
-Python project to query open weather api
+Python project to query open weather api. First objective is to develop snippets to call several freely available weather forecast api's (see https://rapidapi.com/blog/access-global-weather-data-with-these-weather-apis/)
